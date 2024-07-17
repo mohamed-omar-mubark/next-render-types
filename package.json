@@ -14,7 +14,8 @@
     "primeicons": "^7.0.0",
     "primereact": "^10.7.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-transition-group": "^4.4.5"
   },
   "devDependencies": {
     "eslint": "^8",
