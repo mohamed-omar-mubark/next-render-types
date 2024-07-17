@@ -8,6 +8,16 @@ import "primeicons/primeicons.css";
 // style
 import "../assets/styles/app.scss";
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+// session provider
+import { SessionProvider } from "next-auth/react";
+
+export default function App({
+  Component,
+  pageProps: { session, ...pageProps },
+}) {
+  return (
+    <SessionProvider session={session}>
+      <Component {...pageProps} />
+    </SessionProvider>
+  );
 }
