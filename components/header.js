@@ -1,16 +1,76 @@
 import { useSession, signIn, signOut } from "next-auth/react";
+import Link from "next/link";
+
+// components
+import { Button } from "primereact/button";
 
 const Header = () => {
-  const { data } = useSession();
+  const { data: session } = useSession();
 
-  // Add a check to ensure data is defined
-  if (!data) {
-    return <div>Loading...</div>;
-  }
+  return (
+    <header className="bg-white">
+      <div className="container p-4 flex-between-center">
+        <span className="logo text-3xl font-bold text-primary">
+          Render Types
+        </span>
 
-  const { accessToken } = data;
-
-  return <div>Access Token: {accessToken}</div>;
+        <nav>
+          <ul className="flex-between-center gap-4">
+            <li>
+              <Link
+                href="/"
+                className="font-semibold text-gray-700 hover:text-primary">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/"
+                className="font-semibold text-gray-700 hover:text-primary">
+                SSR Posts
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/"
+                className="font-semibold text-gray-700 hover:text-primary">
+                ISR Posts
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/"
+                className="font-semibold text-gray-700 hover:text-primary">
+                SSG Posts
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/"
+                className="font-semibold text-gray-700 hover:text-primary">
+                CSR Posts
+              </Link>
+            </li>
+            {session ? (
+              <Button
+                icon="pi pi-sign-out"
+                label="Sign Out"
+                size="small"
+                onClick={() => signOut()}
+              />
+            ) : (
+              <Button
+                icon="pi pi-sign-in"
+                label="Sign In"
+                size="small"
+                onClick={() => signIn()}
+              />
+            )}
+          </ul>
+        </nav>
+      </div>
+    </header>
+  );
 };
 
 export default Header;

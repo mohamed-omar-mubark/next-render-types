@@ -4,7 +4,7 @@ export default function DefaultLayout({ children }) {
   return (
     <>
       <Header />
-      <main>{children}</main>
+      <main className="bg-gray-100">{children}</main>
     </>
   );
 }
