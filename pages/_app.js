@@ -11,13 +11,18 @@ import "../assets/styles/app.scss";
 // session provider
 import { SessionProvider } from "next-auth/react";
 
+// default layout
+import DefaultLayout from "@/layouts/default";
+
 export default function App({
   Component,
   pageProps: { session, ...pageProps },
 }) {
   return (
     <SessionProvider session={session}>
-      <Component {...pageProps} />
+      <DefaultLayout>
+        <Component {...pageProps} />
+      </DefaultLayout>
     </SessionProvider>
   );
 }
