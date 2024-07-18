@@ -8,11 +8,11 @@ const Header = () => {
   const { data: session } = useSession();
 
   return (
-    <header className="bg-white">
+    <header className="mb-4 bg-white">
       <div className="container p-4 flex-between-center">
-        <span className="logo text-3xl font-bold text-primary">
+        <Link href="/" className="logo text-3xl font-bold text-primary">
           Render Types
-        </span>
+        </Link>
 
         <nav>
           <ul className="flex-between-center gap-4">
@@ -25,9 +25,9 @@ const Header = () => {
             </li>
             <li>
               <Link
-                href="/"
+                href="/ssr-users"
                 className="font-semibold text-gray-700 hover:text-primary">
-                SSR Posts
+                SSR Users
               </Link>
             </li>
             <li>
