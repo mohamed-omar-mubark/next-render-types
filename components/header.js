@@ -32,13 +32,6 @@ const Header = () => {
             </li>
             <li>
               <Link
-                href="/isr-users"
-                className="font-semibold text-gray-700 hover:text-primary">
-                ISR Users
-              </Link>
-            </li>
-            <li>
-              <Link
                 href="/ssg-posts"
                 className="font-semibold text-gray-700 hover:text-primary">
                 SSG Posts
@@ -46,7 +39,14 @@ const Header = () => {
             </li>
             <li>
               <Link
-                href="/"
+                href="/isr-users"
+                className="font-semibold text-gray-700 hover:text-primary">
+                ISR Users
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/csr-posts"
                 className="font-semibold text-gray-700 hover:text-primary">
                 CSR Posts
               </Link>
