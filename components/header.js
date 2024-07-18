@@ -39,7 +39,7 @@ const Header = () => {
             </li>
             <li>
               <Link
-                href="/"
+                href="/ssg-posts"
                 className="font-semibold text-gray-700 hover:text-primary">
                 SSG Posts
               </Link>
