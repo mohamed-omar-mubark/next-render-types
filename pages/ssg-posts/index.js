@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const SSGPosts = ({ posts }) => {
   return (
     <div className="container p-3 border-round-lg bg-white">
@@ -7,14 +9,15 @@ const SSGPosts = ({ posts }) => {
 
       <div className="flex flex-column gap-3">
         {posts.map((post) => (
-          <div
+          <Link
+            href={`/ssg-posts/${post.id}`}
             key={post.id}
-            className="p-3 border-1 border-gray-200 border-round-lg flex flex-column gap-2">
+            className="p-3 border-1 border-gray-200 border-round-lg flex flex-column gap-2 hover:bg-gray-100">
             <span className="text-lg font-semibold text-gray-700">
               {post.title}
             </span>
             <p className="m-0 text-gray-500">{post.body}</p>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
