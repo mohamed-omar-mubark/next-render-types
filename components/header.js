@@ -32,9 +32,9 @@ const Header = () => {
             </li>
             <li>
               <Link
-                href="/"
+                href="/isr-users"
                 className="font-semibold text-gray-700 hover:text-primary">
-                ISR Posts
+                ISR Users
               </Link>
             </li>
             <li>
