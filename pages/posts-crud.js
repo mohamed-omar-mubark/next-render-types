@@ -14,10 +14,6 @@ function PostsPage() {
   const [newPost, setNewPost] = useState({ title: "" });
   const [editPost, setEditPost] = useState(null);
 
-  useEffect(() => {
-    fetchData();
-  }, []);
-
   const fetchData = async () => {
     try {
       const res = await axios.get("/api/posts");
