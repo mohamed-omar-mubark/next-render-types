@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { getSession, signIn } from "next-auth/react";
 
 const CSRPosts = () => {
   const [posts, setPosts] = useState([]);
@@ -6,6 +7,15 @@ const CSRPosts = () => {
 
   // CSR Rendering
   useEffect(() => {
+    const secureFunction = async () => {
+      const session = await getSession();
+      if (!session) signIn();
+      else {
+        setLoading(false);
+      }
+    };
+    secureFunction();
+
     const fetchPosts = async () => {
       try {
         const res = await fetch("https://jsonplaceholder.typicode.com/posts");
