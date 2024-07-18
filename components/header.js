@@ -51,6 +51,13 @@ const Header = () => {
                 CSR Posts
               </Link>
             </li>
+            <li>
+              <Link
+                href="/posts-crud"
+                className="font-semibold text-gray-700 hover:text-primary">
+                Posts Crud
+              </Link>
+            </li>
             {session ? (
               <Button
                 icon="pi pi-sign-out"
